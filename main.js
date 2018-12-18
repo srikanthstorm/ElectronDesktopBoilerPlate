@@ -1,9 +1,10 @@
 const { app, BrowserWindow } = require('electron')
-
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
+const electron = require('electron')
+    // Keep a global reference of the window object, if you don't, the window will
+    // be closed automatically when the JavaScript object is garbage collected.
 let win
 require('electron-reload')(__dirname);
+const ipc = electron.ipcMain
 
 function createWindow() {
     // Create the browser window.
@@ -48,6 +49,12 @@ app.on('activate', () => {
     if (win === null) {
         createWindow()
     }
+})
+
+
+ipc.on('send', _ => {
+    console.log("hi")
+        //   win.webConetents.send('resp', "hi");
 })
 
 // In this file you can include the rest of your app's specific main process
