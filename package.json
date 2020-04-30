@@ -13,7 +13,7 @@
     "author": "Srikanth Doddi",
     "license": "ISC",
     "dependencies": {
-        "jquery": "^3.3.1"
+        "jquery": "^3.5.0"
     },
     "devDependencies": {
         "electron": "^3.0.10",
